@@ -1,0 +1,15 @@
+# CryoHNF runtime dependencies (Python 3.9, tested with CUDA 11.6)
+# PyTorch: install per https://pytorch.org/ with a CUDA build matching your driver, e.g.
+#   pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+numpy<2
+scipy==1.10.1
+mrcfile==1.4.3
+starfile==0.4.5
+timm==0.6.13
+einops
+tqdm
+# tiny-cuda-nn provides the hash-grid positional encoding (default --pe-type hash_grid).
+# The PyPI package compiles from source and requires the CUDA toolkit (nvcc) matching
+# your PyTorch CUDA build. If it fails to build, see https://github.com/NVlabs/tiny-cuda-nn
+# or run with --pe-type geom_lowf instead (no tiny-cuda-nn needed).
+tinycudann
